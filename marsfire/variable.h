@@ -199,9 +199,8 @@ byte ctrlType = NONE;
 byte calib = NOCALIB;
 uint16union_t deviceError;
 bool fatalError = false;
-// Encoder-IMU mismathc timers.
-byte enc1ImuMatchCount  = 0; 
-byte enc1ImuMismatchCount  = 0;
+// Encoder-IMU mismatch timers.
+byte enc1ImuMatchCount  = 0;
 // Encoder limits timer.
 byte encImuMismatchErrTimer;
 byte enc1LimitErrTimer;

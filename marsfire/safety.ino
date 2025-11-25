@@ -36,7 +36,7 @@ void checkEncoderIMUMismatch() {
   // Increment timer.
   encImuMismatchErrTimer++;
   // Check of the timer has run out.
-  if (enc1ImuMismatchCount * delTime > ENC_IMU_MISMATCH_TIME_TH)
+  if (encImuMismatchErrTimer * delTime > ENC_IMU_MISMATCH_TIME_TH)
   {
     // Toggle the error flag.
     deviceError.num |= ANG1MISMATCHERR;
