@@ -318,6 +318,10 @@ void computeImuAnglesRight(float ax1, float ay1, float az1,
   imuTheta4 -=  imuTheta2;
   imuTheta4 -=  imuTheta3;
   imuTheta4 -= IMU3ROLLOFFSET;
+  // Rotated end-effector pose (180 deg) reads as 0, so calibration limits apply around it.
+  imuTheta4 -= IMU3RIGHTROLLOFFSET;
+  // Wrap to [-PI, PI] so readings near the +/-180 deg boundary do not flip.
+  imuTheta4 = atan2(sin(imuTheta4), cos(imuTheta4));
 
   // Change IMU angles to degree.
   imuTheta1 = RAD2DEG(imuTheta1);

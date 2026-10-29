@@ -198,11 +198,11 @@ void writeSensorStream()
   //Send header
   bt.write(header[0]);
   bt.write(header[1]);
-  bt.write(header[2]);
-  bt.write(header[3]);
-  bt.write(header[4]);
-  bt.write(header[5]);
-  bt.write(header[6]);
+  bt.write(header[2]); // Payload size
+  bt.write(header[3]); // stream type
+  bt.write(header[4]); // Error val 1
+  bt.write(header[5]); // Error val 2
+  bt.write(header[6]); // Additional info
   
   // Send packet number
   for (int i = 0; i < 2; i++) {
@@ -253,7 +253,7 @@ void sendVersionDetails() {
   // Send the header.
   bt.write(header[0]);
   bt.write(header[1]);
-  bt.write(header[2]);
+  bt.write(header[2]); 
   bt.write(header[3]);
   bt.write(header[4]);
   bt.write(header[5]);

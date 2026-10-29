@@ -128,6 +128,7 @@
 #define IMU2ROLLOFFSET            0.00    // Radians
 #define IMU3PITCHOFFSET           0.00    // Radians
 #define IMU3ROLLOFFSET            0.00    // Radians
+#define IMU3RIGHTROLLOFFSET       PI      // Radians. Right limb end-effector is mounted rotated by 180 deg.
 
 // Calibration angle limits
 #define CALIB_IMU_ANGLE_MIN       -50.0
@@ -172,7 +173,7 @@
 #define SIGN(x)                   x >= 0 ? 1 : -1
 
 // Version and device ID.
-const char* fwVersion = "h1.0.1";
+const char* fwVersion = "h1.0.2";
 const char* deviceId  = "MARS-HOMER";
 const char* compileDate = __DATE__ " " __TIME__;
 
